@@ -46,6 +46,13 @@
     // Activate ADJUST layer by pressing raise and lower
 
     behaviors {
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -135,16 +142,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
-        };
-    };
-
-    key-overrides {
-        compatible = "zmk,key-overrides";
-
-        shift_bs_to_del: shift_bs_to_del {
-            when-pressed = <ZMK_KC_DEL>;
-            modifiers = <MOD_MASK_SHIFT>;
-            keycode = <ZMK_KC_BSPC>;
         };
     };
 
