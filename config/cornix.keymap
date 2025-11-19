@@ -138,6 +138,16 @@
         };
     };
 
+    key-overrides {
+        compatible = "zmk,key-overrides";
+
+        shift_bs_to_del: shift_bs_to_del {
+            when-pressed = <ZMK_KC_DEL>;
+            modifiers = <(MOD_LSFT|MOD_RSFT)>;
+            keycode = <ZMK_KC_BSPC>;
+        };
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
