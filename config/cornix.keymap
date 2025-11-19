@@ -143,7 +143,7 @@
 
         shift_bs_to_del: shift_bs_to_del {
             when-pressed = <ZMK_KC_DEL>;
-            modifiers = <(MOD_LSFT|MOD_RSFT)>;
+            modifiers = <MOD_MASK_SHIFT>;
             keycode = <ZMK_KC_BSPC>;
         };
     };
