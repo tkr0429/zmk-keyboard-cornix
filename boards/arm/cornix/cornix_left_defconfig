@@ -76,3 +76,18 @@ CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y
 CONFIG_ZMK_STUDIO=y
 CONFIG_ZMK_STUDIO_LOCKING=n
 CONFIG_ZMK_STUDIO_LOCK_ON_DISCONNECT=n
+
+# Enable status advertisement
+CONFIG_ZMK_STATUS_ADVERTISEMENT=y
+CONFIG_ZMK_STATUS_ADV_KEYBOARD_NAME="CornixZMK"  # Shown on scanner
+
+# Activity-based intervals (battery optimization)
+CONFIG_ZMK_STATUS_ADV_ACTIVITY_BASED=y
+CONFIG_ZMK_STATUS_ADV_ACTIVE_INTERVAL_MS=100      # 10Hz when typing
+CONFIG_ZMK_STATUS_ADV_IDLE_INTERVAL_MS=30000      # 0.03Hz when idle
+
+# Split keyboard battery monitoring (if applicable)
+CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=y
+
+# (Optional) Central side selection for split keyboards
+CONFIG_ZMK_STATUS_ADV_CENTRAL_SIDE="LEFT"  # or "RIGHT" (default)
